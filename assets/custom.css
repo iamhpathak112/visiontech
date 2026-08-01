@@ -16,5 +16,5 @@ button,
 .btn,
 input[type="submit"],
 input[type="button"] {
-  font-family: "DK Woolwich", "Futura Condensed", "Arial Narrow", Arial, Helvetica, sans-serif;
+  font-family: "DK Woolwich", "Futura Condensed", "Arial Narrow", Arial, Helvetica, sans-serif !important;
 }
