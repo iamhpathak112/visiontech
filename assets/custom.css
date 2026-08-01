@@ -5,3 +5,16 @@
   font-style: normal;
   font-display: swap;
 }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+button,
+.btn,
+input[type="submit"],
+input[type="button"] {
+  font-family: "Woolwich", "Futura Condensed", "Arial Narrow", Arial, Helvetica, sans-serif;
+}
