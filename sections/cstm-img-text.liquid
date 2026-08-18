@@ -4,7 +4,7 @@
   - Settings: heading, description, image, button text, button url, alignment
 {% endcomment %}
 
-<div class="promo-feature-{{ section.id }} page-width">
+<div class="promo-feature-{{ section.id }}  section-{{ section.id }}-padding page-width">
   <div class="promo-feature__row promo-feature__row--{{ section.settings.image_alignment }}">
 
     <div class="promo-feature__media">
@@ -52,9 +52,9 @@
 </div>
 
 {% style %}
-  .promo-feature-{{ section.id }} {
-    padding-top: {{ section.settings.padding_top }}px;
-    padding-bottom: {{ section.settings.padding_bottom }}px;
+    .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
   }
 
   .promo-feature-{{ section.id }} .promo-feature__row {
@@ -124,6 +124,12 @@
       flex-direction: column;
     }
   }
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
 {% endstyle %}
 
 {% schema %}
@@ -168,6 +174,10 @@
         { "value": "center", "label": "Centered (stacked)" }
       ],
       "default": "left"
+    },      
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
     },
     {
       "type": "range",
@@ -176,7 +186,7 @@
       "max": 100,
       "step": 4,
       "unit": "px",
-      "label": "Padding top",
+      "label": "t:sections.all.padding.padding_top",
       "default": 36
     },
     {
@@ -186,7 +196,7 @@
       "max": 100,
       "step": 4,
       "unit": "px",
-      "label": "Padding bottom",
+      "label": "t:sections.all.padding.padding_bottom",
       "default": 36
     }
   ],
