@@ -120,6 +120,15 @@
     "cstm_img_text_RDGbkQ": {
       "type": "cstm-img-text",
       "blocks": {
+        "gallary_TLHk7G": {
+          "type": "gallary",
+          "settings": {
+            "heading": "",
+            "para": "",
+            "link": "",
+            "anchor": ""
+          }
+        },
         "gallary_YFtdk7": {
           "type": "gallary",
           "settings": {
@@ -131,6 +140,7 @@
         }
       },
       "block_order": [
+        "gallary_TLHk7G",
         "gallary_YFtdk7"
       ],
       "name": "about_us",
