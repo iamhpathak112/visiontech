@@ -1,5 +1,5 @@
 <div class="wrapper">
-  {{ section.settings.vertical_alignment }}
+  {% comment %} {{ section.settings.vertical_alignment }} {% endcomment %}
 <div class="{% if section.settings.vertical_alignment == 'con' %}page-width{% endif %}">
 <div class="row {{ section.settings.logo_aligment }}">
     {% for block in section.blocks %} 
