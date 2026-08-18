@@ -3,9 +3,11 @@
 <div class="{% if section.settings.vertical_alignment == 'con' %}page-width{% endif %}">
 <div class="row {{ section.settings.logo_aligment }}">
     {% for block in section.blocks %} 
-<div class="about_img">
-<img src="{{ block.settings.img1 | img_url: "master" }}"/>
-</div>
+    {% if block.settings.img1 != blank %}
+        <div class="about_img">
+        <img src="{{ block.settings.img1 | img_url: "master" }}"/>
+        </div>
+    {% endif %}
 <div class="about_content">
 <h2>{{ block.settings.heading }}</h2>
 <p> {{ block.settings.para }}</p>
