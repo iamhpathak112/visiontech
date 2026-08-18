@@ -124,25 +124,15 @@
           "type": "gallary",
           "settings": {
             "img": "shopify://shop_images/326d5669b7beedbf022fd9fdfc428ee3106f6f34.png",
-            "heading": "hgh",
-            "para": "k",
+            "heading": "hghjjhgflfgjlkhfghfg jhfgkhjgfd kjdfgkjkhghjjgjgf  kjfdgkjgh fgkkgfkg jkjginvnuit",
+            "para": "khghjjhgflfgjlkhfghfg jhfgkhjgfd kjdfgkjkhghjjgjgf  kjfdgkjgh fgkkgfkg jkjginvnuithghjjhgflfgjlkhfghfg jhfgkhjgfd kjdfgkjkhghjjgjgf  kjfdgkjgh fgkkgfkg jkjginvnuithghjjhgflfgjlkhfghfg jhfgkhjgfd kjdfgkjkhghjjgjgf  kjfdgkjgh fgkkgfkg jkjginvnuithghjjhgflfgjlkhfghfg jhfgkhjgfd kjdfgkjkhghjjgjgf  kjfdgkjgh fgkkgfkg jkjginvnuithghjjhgflfgjlkhfghfg jhfgkhjgfd kjdfgkjkhghjjgjgf  kjfdgkjgh fgkkgfkg jkjginvnuithghjjhgflfgjlkhfghfg jhfgkhjgfd kjdfgkjkhghjjgjgf  kjfdgkjgh fgkkgfkg jkjginvnuit",
             "link": "#",
             "anchor": "hgf"
-          }
-        },
-        "gallary_YFtdk7": {
-          "type": "gallary",
-          "settings": {
-            "heading": "",
-            "para": "",
-            "link": "",
-            "anchor": ""
           }
         }
       },
       "block_order": [
-        "gallary_TLHk7G",
-        "gallary_YFtdk7"
+        "gallary_TLHk7G"
       ],
       "name": "about_us",
       "settings": {
