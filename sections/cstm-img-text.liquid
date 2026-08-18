@@ -3,9 +3,9 @@
 <div class="{% if section.settings.vertical_alignment == 'con' %}page-width{% endif %}">
 <div class="row {{ section.settings.logo_aligment }}">
     {% for block in section.blocks %} 
-    {% if block.settings.img1 != blank %}
+    {% if block.settings.img != blank %}
         <div class="about_img">
-        <img src="{{ block.settings.img1 | img_url: "master" }}"/>
+        <img src="{{ block.settings.img | img_url: "master" }}"/>
         </div>
     {% endif %}
 <div class="about_content">
@@ -196,7 +196,7 @@
         "settings" : [
           {
             "type" : "image_picker",
-            "id" : "img1",
+            "id" : "img",
             "label" : "images"
           },
           {
