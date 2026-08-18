@@ -1,0 +1,239 @@
+<div class="wrapper">
+  {{ section.settings.vertical_alignment }}
+<div class="{% if section.settings.vertical_alignment == 'con' %}page-width{% endif %}">
+<div class="row {{ section.settings.logo_aligment }}">
+    {% for block in section.blocks %} 
+<div class="about_img">
+<img src="{{ block.settings.img1 | img_url: "master" }}"/>
+</div>
+<div class="about_content">
+<h2>{{ block.settings.heading }}</h2>
+<p> {{ block.settings.para }}</p>
+<div class="view_anchor">
+            {% if block.settings.anchor != blank %} <a href="{{ block.settings.link }}"> {{ block.settings.anchor }}  </a> {% endif %}
+</div>
+</div>
+      {% endfor %}
+</div>
+</div>
+</div>
+ 
+<style>
+.wrapper{
+    width: 100%;
+  }
+  .row{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .about_img{
+      width: calc(50% - 20px);
+      padding: 0 10px;
+  }
+  .about_img img{
+      width: 100%;
+      border: 1px solid ;
+      border-radius: 9px; 
+  }
+  .about_content{
+      width: 50%;
+  }
+  .about_content h2{
+      margin: 10px 0px 0px 0px;
+  }
+  .about_content p{
+     font-size: 18px;
+     margin: 10px 0px;
+  }
+  .view_anchor{
+    text-align: center;
+  }
+  .view_anchor a{
+    display: inline-block;
+    text-decoration: none;
+    text-transform: capitalize;
+    color: #000;
+    background: #fff;
+    margin: 20px;
+    text-align: center;
+    width: 100px;
+    height: 45px;
+    line-height: 45px;
+    border: 1px solid;
+    border-radius: 5px;
+    transition: all 0.3s linear;
+  }
+  .view_anchor a:hover{
+    color: #fff;
+    background: #000;
+  }
+  .row.right {
+    flex-direction: row-reverse;
+}
+ 
+.about_content h2{
+    font-size:{{ section.settings.font_size }}px;
+    text-transform:{{ section.settings.Text-Transform}};
+  }
+  .wrapper{
+    padding-top:{{ section.settings.pd_top}}px;
+    padding-bottom:{{ section.settings.pd_bottom}}px;
+    margin-bottom:{{ section.settings.magn_bottom}}px; 
+    background-image:url('{{ section.settings.bg-image }}');
+  }
+ 
+</style>
+{% schema %}
+  {
+    "name": "about_us",
+    "settings": [
+      {
+          "type": "select",
+          "id": "Text-Transform",
+          "label": "About Image",
+        "options": [
+          {
+            "value": "lowercase",
+            "label": "Lowercase"
+          },
+          {
+            "value": "capitalize",
+            "label": "Capitalize"
+          },
+          {
+            "value": "uppercase",
+            "label": "Uppercase"
+          }
+        ],
+        "default": "lowercase"
+      },
+       {
+          "type": "radio",
+          "id": "logo_aligment",
+          "label": "About Image",
+        "options": [
+          {
+            "value": "left",
+            "label": "Left"
+          },
+          {
+            "value": "right",
+            "label": "right"
+          }
+        ],
+        "default": "left"
+      },
+       {
+        "type": "image_picker",
+        "id": "bg-image",
+        "label": "Custom Background Image"
+      },
+      {
+        "type": "range",
+        "id": "font_size" ,
+        "min": 12,
+        "max": 60,
+        "step": 1,
+        "unit": "px",
+        "label": "Font size",
+        "default": 16
+      },
+        {
+        "type": "range",
+        "id": "pd_top" ,
+        "min": 10,
+        "max": 40,
+        "step": 1,
+        "unit": "px",
+        "label": "Padding Top",
+        "default": 14
+      },
+        {
+        "type": "range",
+        "id": "pd_bottom" ,
+        "min": 10,
+        "max": 40,
+        "step": 1,
+        "unit": "px",
+        "label": "Padding Bottom",
+        "default": 14
+      },
+       {
+        "type": "range",
+        "id": "magn_bottom" ,
+        "min": 0,
+        "max": 60,
+        "step": 1,
+        "unit": "px",
+        "label": "Margin Bottom",
+        "default": 14
+      },
+      {
+        "type": "select",
+        "id": "vertical_alignment",
+        "label": "Vertical alignment",
+        "options": [
+          {
+            "value": "con",
+            "label": "Top"
+          },
+          {
+            "value": "full",
+            "label": "Bottom"
+          }
+        ],
+        "default": "con"
+      }
+    ],
+    "blocks":[
+      {
+        "type": "gallary",
+        "name": "gallary_block",
+        "settings" : [
+          {
+            "type" : "image_picker",
+            "id" : "img1",
+            "label" : "images"
+          },
+          {
+            "type" : "text",
+            "id" : "heading",
+            "label" : "about-heading"
+          },
+          {
+            "type" : "text",
+            "id" : "para",
+            "label" : "about-paragraph"
+          },
+          {
+            "type" : "url",
+            "id" : "link",
+            "label" : "button"
+          },
+          {
+            "type" : "text",
+            "id" : "anchor",
+            "label" : "button"
+          }
+        ]
+      }
+    ],
+      "presets":[
+          {
+            "name" : "about_us"
+          }
+      ]
+  }
+{% endschema %}
+<style>
+</style>
+ 
+ 
+  
+{% stylesheet %}
+{% endstylesheet %}
+ 
+{% javascript %}
+{% endjavascript %}
